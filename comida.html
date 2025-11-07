@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comida - Conociendo México</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+      color: #0d2e2e;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      padding: 10px;
+      border-radius: 30px;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+      color: #0d2e2e;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar .activo {
+      background: linear-gradient(to bottom, #ffb74d, #ff9100);
+      color: white;
+    }
+
+    .container {
+      padding: 130px 80px 60px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 15px;
+      max-width: 1100px;
+      margin: 100px auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff9100;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .grid-comida {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .platillo {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .platillo:hover {
+      transform: scale(1.05);
+    }
+
+    .platillo img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .platillo h3 {
+      text-align: center;
+      margin: 15px 0 5px;
+      color: #0d2e2e;
+    }
+
+    .platillo p {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 0 15px 20px;
+      color: #333;
+    }
+
+    .extra-info {
+      margin-top: 50px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      line-height: 1.7;
+      color: #0d2e2e;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="lugares.html">Lugares</a>
+    <a href="comida.html" class="activo">Comida</a>
+    <a href="tradiciones.html">Tradiciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+
+  <div class="container">
+    <h1>Gastronomía de Chiapas</h1>
+    <p class="intro">
+      La gastronomía chiapaneca es un reflejo de su diversidad cultural y natural.  
+      Combinando sabores indígenas, españoles y tropicales, cada platillo cuenta una historia de identidad, color y tradición.
+    </p>
+
+    <div class="grid-comida">
+      <div class="platillo">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/ff/7d/93/tamal-de-mole.jpg" alt="Tamales">
+        <h3>Tamales Chiapanecos</h3>
+        <p>Envueltos en hoja de plátano, rellenos de carne y salsa roja o mole. Un clásico de las fiestas y celebraciones familiares.</p>
+      </div>
+
+      <div class="platillo">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/a3/c5/61/mole-chiapaneco-el-plato.jpg" alt="Mole">
+        <h3>Mole Chiapaneco</h3>
+        <p>Su mezcla de chiles, semillas, especias y chocolate crea un sabor profundo, ideal para acompañar carnes o aves.</p>
+      </div>
+
+      <div class="platillo">
+        <img src="https://www.mexicodesconocido.com.mx/wp-content/uploads/2018/06/17130627320_0bd1ee6598_b.jpg" alt="Café">
+        <h3>Café de Chiapas</h3>
+        <p>Uno de los mejores cafés del mundo, cultivado en montañas tropicales con aroma intenso y sabor equilibrado.</p>
+      </div>
+
+      <div class="platillo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdjz7AY2sOwduVIBbgAQFs6ZyKh6kRWu39OQ&s" alt="Pepita con Tasajo">
+        <h3>Pepita con Tasajo</h3>
+        <p>Platillo típico hecho con carne de res asada bañada en salsa espesa de pepita molida. Se sirve con arroz y tortillas hechas a mano.</p>
+      </div>
+
+      <div class="platillo">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/12/e3/61/87/pozol-de-cacao.jpg" alt="Pozol">
+        <h3>Pozol</h3>
+        <p>Bebida refrescante elaborada con cacao y maíz molido. Es un símbolo de identidad chiapaneca y se disfruta fría en los días calurosos.</p>
+      </div>
+
+      <div class="platillo">
+        <img src="https://mayacomunicacion.com.mx/wp-content/uploads/2023/04/Los-%E2%80%98chinculguajes-platillo-de-la-gastronomia-chiapaneca.jpeg" alt="Chinculguajes">
+        <h3>Chinculguajes</h3>
+        <p>Empanadas de masa rellenas de frijol y queso, fritas o al comal. Su nombre proviene del náhuatl y significa “bocado relleno”.</p>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <h3>Sabores con historia</h3>
+      <p>
+        En Chiapas, comer es una experiencia que une familia, comunidad y tradición.  
+        Cada región aporta ingredientes únicos: el plátano y cacao del trópico, el maíz de los valles y las hierbas de la sierra.
+      </p>
+      <p>
+        La cocina chiapaneca es considerada una de las más diversas del país. En sus platillos se mezclan los sabores prehispánicos con los heredados de la época colonial, dando como resultado una gastronomía rica en colores, aromas y texturas.
+      </p>
+      <p>
+        Los mercados locales y las cocinas de los pueblos son guardianes de esta herencia, donde las recetas se transmiten de generación en generación, manteniendo vivo el orgullo y el sabor del sur de México.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

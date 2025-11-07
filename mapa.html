@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Dinámico - Conociendo México</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+      color: #0d2e2e;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 10px;
+      border-radius: 30px;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+      color: #0d2e2e;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar .activo {
+      background: linear-gradient(to bottom, #ffb74d, #ff9100);
+      color: white;
+    }
+
+    .container {
+      padding: 130px 80px 60px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 15px;
+      max-width: 1100px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff9100;
+      font-style: italic;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 90%;
+      height: 400px;
+    }
+
+    .imagen {
+      margin-top: 30px;
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* --- Descripción interactiva --- */
+    .descripcion {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .extra-info {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      animation: fade 0.4s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-mostrar {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      background: linear-gradient(to bottom, #ffb74d, #ff9100);
+      color: white;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-mostrar:hover {
+      background: linear-gradient(to bottom, #ffa726, #ff6f00);
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 25px;
+      background: #0d2e2e;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .boton-volver:hover {
+      background: #ff9100;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="lugares.html">Lugares</a>
+    <a href="comida.html">Comida</a>
+    <a href="tradiciones.html">Tradiciones</a>
+    <a href="mapa.html" class="activo">Mapa</a>
+  </nav>
+
+  <div class="container">
+    <h1>Mapa Dinámico</h1>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15112.302023895796!2d-92.64708931395064!3d16.737235142152827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ed4592e28505a1%3A0xf5e1dd4cfce6c5d5!2sCatedral%20de%20San%20Crist%C3%B3bal%20de%20las%20Casas!5e0!3m2!1ses!2smx!4v1697584572521!5m2!1ses!2smx"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+
+    <img src="https://www.travelreport.mx/wp-content/uploads/2017/11/scc4.jpg" class="imagen" alt="Catedral San Cristóbal">
+
+    <div class="descripcion">
+      <p>
+        El mapa muestra la ubicación de la <strong>Catedral de San Cristóbal de las Casas</strong>, uno de los sitios más emblemáticos de Chiapas. Este lugar destaca por su arquitectura colonial y su relevancia cultural en la historia de México.
+      </p>
+      <p>
+          La catedral fue construida en el siglo XVI y combina estilos barroco y plateresco. Está dedicada a San Cristóbal Mártir y es el corazón espiritual y social de la ciudad. Frente a ella se encuentra la plaza principal, donde locales y visitantes disfrutan del ambiente chiapaneco.
+        </p>
+        <p>
+          Además, este punto marca el inicio de diversas rutas turísticas que conectan con pueblos mágicos, cascadas y zonas arqueológicas, consolidando a San Cristóbal como el destino ideal para explorar Chiapas.
+        </p>
+    </div>
+  </div>
+</body>
+</html>

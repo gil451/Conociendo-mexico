@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lugares - Conociendo México</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+      color: #0d2e2e;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 10px;
+      border-radius: 30px;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+      color: #0d2e2e;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar .activo {
+      background: linear-gradient(to bottom, #ffb74d, #ff9100);
+      color: white;
+    }
+
+    .container {
+      padding: 130px 80px 60px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 15px;
+      max-width: 1100px;
+      margin: 100px auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .lugar {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+
+    .lugar:hover {
+      transform: scale(1.03);
+    }
+
+    .lugar img {
+      width: 100%;
+      border-radius: 10px;
+      height: 220px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .lugar h3 {
+      margin-top: 5px;
+      color: #0d2e2e;
+    }
+
+    .lugar p {
+      font-size: 0.95rem;
+      color: #333;
+      text-align: justify;
+    }
+
+    .descripcion {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #0d2e2e;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="lugares.html" class="activo">Lugares</a>
+    <a href="comida.html">Comida</a>
+    <a href="tradiciones.html">Tradiciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+
+  <div class="container">
+    <h1>Lugares Imperdibles de Chiapas</h1>
+    <p class="intro">
+      Chiapas es un estado lleno de maravillas naturales, historia y cultura.  
+      Cada rincón ofrece paisajes impresionantes y experiencias únicas que reflejan la riqueza de México.  
+      Desde pueblos mágicos hasta cañones milenarios, Chiapas invita a explorar su magia y tradición.
+    </p>
+
+    <div class="galeria">
+      <!-- Lugar 1 -->
+      <div class="lugar">
+        <img src="https://www.gob.mx/cms/uploads/article/main_image/82906/Chiapas-San-Cristobal-web.jpg" alt="San Cristóbal">
+        <h3>San Cristóbal de las Casas</h3>
+        <p>
+          Ubicado en el corazón de los Altos de Chiapas, San Cristóbal de las Casas es uno de los destinos más encantadores del estado. Su arquitectura colonial, calles empedradas y coloridas fachadas crean una atmósfera mágica que combina historia, cultura y tradición. Entre sus atractivos destacan el Templo de Santo Domingo, los mercados de artesanías y la plaza central, donde se puede disfrutar del ambiente local y la calidez de su gente.
+        </p>
+      </div>
+
+      <!-- Lugar 2 -->
+      <div class="lugar">
+        <img src="https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=450,height=450,dpr=2/tour_img/45cd0becb3ef9f141ab72fabc90fdf404fd858e60426431f629186a30dc99414.jpeg" alt="Cascadas de Agua Azul">
+        <h3>Cascadas de Agua Azul</h3>
+        <p>
+          Rodeadas de una exuberante vegetación, las Cascadas de Agua Azul ofrecen un espectáculo natural impresionante. Sus aguas turquesa, formadas por minerales naturales, fluyen entre pozas y caídas que crean un entorno perfecto para relajarse y disfrutar de la naturaleza. Este sitio es ideal para practicar senderismo, nadar o simplemente contemplar la belleza de su entorno.
+        </p>
+      </div>
+
+      <!-- Lugar 3 -->
+      <div class="lugar">
+        <img src="https://www.civitatis.com/f/mexico/san-cristobal-de-las-casas/excursion-canon-sumidero-589x392.jpg" alt="Cañón del Sumidero">
+        <h3>Cañón del Sumidero</h3>
+        <p>
+          El Cañón del Sumidero es una de las joyas naturales más impresionantes de México. Sus paredes verticales de más de mil metros de altura y el río Grijalva que las atraviesa ofrecen un paisaje majestuoso. Se pueden realizar recorridos en lancha para observar cocodrilos, monos araña y aves exóticas. También cuenta con miradores desde donde se aprecian vistas espectaculares.
+        </p>
+      </div>
+
+      <!-- Lugar 4 -->
+      <div class="lugar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3YRvnXwdmbMmWU5axfijKWgFMZPm9onwSkw&s" alt="Palenque">
+        <h3>Zona Arqueológica de Palenque</h3>
+        <p>
+          Palenque es uno de los sitios arqueológicos más importantes de la civilización maya. Entre la selva chiapaneca se alzan templos y palacios con una arquitectura impresionante y jeroglíficos que narran la historia de sus antiguos reyes. El Templo de las Inscripciones, dedicado al rey Pakal, es uno de los más emblemáticos. Este sitio fue declarado Patrimonio de la Humanidad por la UNESCO.
+        </p>
+      </div>
+
+      <!-- Lugar 5 -->
+      <div class="lugar">
+        <img src="https://mexicotransportservice.com/wp-content/uploads/2022/12/San-Cristobal-de-las-Casas-to-Montebello-Lakes-chiapas-2.jpg" alt="Lagos de Montebello">
+        <h3>Lagos de Montebello</h3>
+        <p>
+          Este parque nacional está formado por más de 50 lagunas rodeadas de bosques de pino y encino. Cada lago presenta un tono diferente de azul o verde, dependiendo de la composición mineral del agua y la luz solar. Es un lugar ideal para acampar, remar o simplemente admirar la naturaleza en su máxima expresión.
+        </p>
+      </div>
+
+      <!-- Lugar 6 -->
+      <div class="lugar">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/af/3b/6d.jpg" alt="El Chiflón">
+        <h3>Cascada El Chiflón</h3>
+        <p>
+          Una de las cascadas más altas y espectaculares de Chiapas. Su caída principal, conocida como “Velo de Novia”, alcanza más de 120 metros de altura. Los visitantes pueden disfrutar de senderos ecológicos, miradores naturales y áreas para nadar, rodeados de una vegetación exuberante.
+        </p>
+      </div>
+    </div>
+
+    <p class="descripcion">
+      Cada uno de estos lugares representa una parte del alma de Chiapas: su riqueza natural, su historia viva y su belleza incomparable.  
+      Explorar San Cristóbal, Agua Azul, el Cañón del Sumidero, Palenque, Montebello y El Chiflón es vivir una experiencia que combina cultura, aventura y conexión profunda con la naturaleza.
+    </p>
+  </div>
+</body>
+</html>

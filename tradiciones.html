@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tradiciones - Conociendo México</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+      color: #0d2e2e;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      padding: 10px;
+      border-radius: 30px;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+      color: #0d2e2e;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar .activo {
+      background: linear-gradient(to bottom, #ffb74d, #ff9100);
+      color: white;
+    }
+
+    .container {
+      padding: 130px 80px 60px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 15px;
+      max-width: 1100px;
+      margin: 100px auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: #ff9100;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .grid-tradiciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.03);
+    }
+
+    .tarjeta img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta h3 {
+      color: #0d2e2e;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta p {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .extra-info {
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="lugares.html">Lugares</a>
+    <a href="comida.html">Comida</a>
+    <a href="tradiciones.html" class="activo">Tradiciones</a>
+    <a href="mapa.html">Mapa</a>
+  </nav>
+
+  <div class="container">
+    <h1>Tradiciones de Chiapas</h1>
+    <p class="intro">
+      Chiapas es un estado lleno de cultura, color y vida. Cada celebración representa siglos de historia, fe y arte, donde se unen las raíces indígenas con las influencias coloniales.
+    </p>
+
+    <div class="grid-tradiciones">
+      <div class="tarjeta">
+        <img src="https://i.pinimg.com/736x/54/71/b1/5471b16ddd591c15fff9f51ef1c584a6.jpg" alt="Parachicos">
+        <h3>Danza de los Parachicos</h3>
+        <p>Celebración tradicional reconocida como Patrimonio Cultural de la Humanidad. Los danzantes usan máscaras talladas y trajes coloridos para rendir homenaje a los santos patronos de Chiapa de Corzo.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="https://hotelvmsancristobaldelascasas.com/wp-content/uploads/2024/06/free-photo-of-paisaje-luces-noche-festival.jpeg" alt="Feria">
+        <h3>Ferias Chiapanecas</h3>
+        <p>En las ferias se mezclan la música, la danza, los juegos mecánicos y la comida tradicional. Son el punto de encuentro donde las comunidades celebran su identidad y alegría.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="https://explorervibes.com/wp-content/uploads/2016/05/mexico-san-cristobal-de-las-casas-dia-de-los-muertes-femicide-backpacker-backpacking-travel.jpg" alt="Día de Muertos">
+        <h3>Día de Muertos</h3>
+        <p>Fiesta llena de flores, velas y color. En Chiapas, las familias adornan altares y celebran con música, comida y rezos en honor a sus seres queridos fallecidos.</p>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <h3>El alma cultural de Chiapas</h3>
+      <p>
+        En Chiapas, las tradiciones no solo son celebraciones, sino formas de mantener viva la identidad de los pueblos. Desde los rituales mayas hasta las fiestas patronales, cada costumbre representa un vínculo con los antepasados y con la naturaleza.
+      </p>
+      <p>
+        Las comunidades indígenas, como los tzotziles y tzeltales, conservan prácticas ancestrales en su vestimenta, lengua, gastronomía y ceremonias religiosas. En cada municipio, las fiestas patronales son momentos sagrados donde la música de marimba y los bailes tradicionales llenan las calles de vida.
+      </p>
+      <p>
+        Además, las artesanías chiapanecas —tejidos, bordados, máscaras y cerámica— reflejan la creatividad de su gente y su amor por los colores. Todo esto convierte a Chiapas en un lugar donde la tradición y la espiritualidad caminan juntas.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
