@@ -1,0 +1,75 @@
+.comida-body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+  color: #0d2e2e;
+}
+
+/* Contenedor */
+.container {
+  padding: 130px 80px 60px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 100px auto;
+}
+
+/* Textos */
+h1 {
+  text-align: center;
+  color: #ff9100;
+  font-style: italic;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Grid comida */
+.grid-comida {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.platillo {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.platillo:hover {
+  transform: scale(1.05);
+}
+
+.platillo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.platillo h3 {
+  text-align: center;
+  margin: 15px 0 5px;
+}
+
+.platillo p {
+  text-align: center;
+  padding: 0 15px 20px;
+  color: #333;
+}
+
+/* Extra info */
+.extra-info {
+  margin-top: 50px;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}

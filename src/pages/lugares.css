@@ -1,0 +1,61 @@
+.lugares-body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+  color: #0d2e2e;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Contenedor */
+.container {
+  padding: 130px 80px 60px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 100px auto;
+}
+
+/* Títulos y textos */
+h1 {
+  text-align: center;
+  color: #111;
+}
+
+.intro {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.lugar {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.lugar:hover {
+  transform: scale(1.03);
+}
+
+.lugar img {
+  width: 100%;
+  border-radius: 10px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.descripcion {
+  text-align: center;
+  margin-top: 40px;
+  line-height: 1.6;
+}
