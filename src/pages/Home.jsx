@@ -12,8 +12,12 @@ export default function Home() {
 
           <div className="ubicacion pop-in delay-2">
             <span className="estado">Chiapas</span>
-            <span className="ciudad">SAN CRISTOBAL DE LAS CASAS</span>
+            <span className="ciudad">SAN CRISTÓBAL DE LAS CASAS</span>
           </div>
+
+          <a href="#tour" className="cta slide-up delay-3">
+            Explorar ahora
+          </a>
         </div>
       </section>
     </>

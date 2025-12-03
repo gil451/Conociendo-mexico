@@ -7,7 +7,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      // Activa el estado 'scrolled' cuando el usuario se desplaza más de 50px
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -15,7 +16,14 @@ export default function Navbar() {
   }, []);
 
   return (
+    // Agregamos una clase para el logo que está separado de los enlaces
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-logo">
+        <NavLink to="/">
+          Chiapas <span className="logo-accent">Travel</span>
+        </NavLink>
+      </div>
+
       <nav className="menu">
         <NavLink to="/" end className={({ isActive }) => (isActive ? "activo" : "")}>
           Home
@@ -26,22 +34,23 @@ export default function Navbar() {
         </NavLink>
 
         <NavLink to="/comida" className={({ isActive }) => (isActive ? "activo" : "")}>
-          Comida
+          Gastronomía
         </NavLink>
 
         <NavLink to="/tradiciones" className={({ isActive }) => (isActive ? "activo" : "")}>
-          Tradiciones
+          Cultura
         </NavLink>
 
         <NavLink to="/mapa" className={({ isActive }) => (isActive ? "activo" : "")}>
           Mapa
         </NavLink>
+        
+        {/* Enlace destacado como 'Call to Action' */}
+        <NavLink to="/tour360" className={({ isActive }) => (isActive ? "activo destacado" : "destacado-btn")}>
+          Tour 360°
+        </NavLink>
       </nav>
-
-      <div className="buscador">
-        <input type="text" placeholder="Buscar..." />
-        <button>🔍</button>
-      </div>
+      {/* El div.buscador ha sido eliminado según tu solicitud */}
     </header>
   );
 }

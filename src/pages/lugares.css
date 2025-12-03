@@ -1,61 +1,138 @@
+/* Paleta de Colores Mejorada:
+   - Primario (Verde Profundo): #0A3D3C
+   - Secundario (Turquesa): #1ABC9C
+   - Acento Claro (Crema/Blanco Roto): #F4F4F4
+   - Texto Principal: #333333
+*/
+
+/* --- Cuerpo de la Página (lugares-body) --- */
 .lugares-body {
   margin: 0;
+  /* Fuente principal para el cuerpo y texto */
   font-family: "Poppins", sans-serif;
-  background: url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
-  color: #0d2e2e;
+  /* Fondo más cálido con mayor contraste visual */
+  background: #f4f4f4 url("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/245000/245511-Chiapas.jpg") no-repeat center center/cover;
+  color: #333333;
   overflow-x: hidden;
   min-height: 100vh;
+  /* Efecto de fondo sutil con scroll */
+  background-attachment: fixed;
 }
 
-/* Contenedor */
+/* --- Contenedor Principal (container) --- */
 .container {
-  padding: 130px 80px 60px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 15px;
-  max-width: 1100px;
-  margin: 100px auto;
+  padding: 60px 40px; /* Reducido el padding superior/inferior */
+  /* Fondo casi blanco para contraste, borde menos pronunciado */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 80px auto; /* Margen superior e inferior para centrar */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Sombra más suave */
 }
 
-/* Títulos y textos */
+/* --- Títulos y textos --- */
+
+/* Título principal */
 h1 {
   text-align: center;
-  color: #111;
+  color: #0A3D3C; /* Verde profundo */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  /* Fuente secundaria opcional para un estilo más distintivo (ej: 'Playfair Display') */
+  /* font-family: 'Playfair Display', serif; */ 
 }
 
+/* Sub-encabezado/Introducción */
 .intro {
   text-align: center;
-  color: #333;
-  margin-bottom: 40px;
+  color: #555555;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Galería */
+/* Descripción final */
+.descripcion {
+  text-align: center;
+  margin-top: 50px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #777;
+}
+
+
+/* --- Galería (galeria) --- */
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  /* Mejor distribución en pantallas grandes */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
+/* --- Tarjeta de Lugar (lugar) --- */
 .lugar {
   background: white;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s;
+  border-radius: 12px;
+  padding: 0; /* Eliminado el padding interior */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden; /* Para contener la imagen con border-radius */
+  display: flex;
+  flex-direction: column; /* Para asegurar que el contenido se ajuste */
 }
 
 .lugar:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px); /* Elevación sutil */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .lugar img {
   width: 100%;
-  border-radius: 10px;
-  height: 220px;
+  border-radius: 0; /* La tarjeta ya tiene border-radius */
+  height: 250px; /* Un poco más de altura para la imagen */
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.descripcion {
-  text-align: center;
-  margin-top: 40px;
-  line-height: 1.6;
+.lugar:hover img {
+    transform: scale(1.05); /* Zoom sutil al pasar el mouse */
+}
+
+.lugar-info {
+    padding: 20px;
+}
+
+.lugar h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #1ABC9C; /* Color secundario para destacar el nombre */
+    margin-bottom: 10px;
+}
+
+.lugar p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* --- Media Queries para responsividad --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+    margin: 50px 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
 }

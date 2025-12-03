@@ -10,12 +10,12 @@
 
 body {
   overflow-x: hidden;
-  background: #fff;
+  background: #fafafa;
   color: #0d2e2e;
 }
 
 /* ---------------------------- */
-/* Hero + Fondo con parallax    */
+/* HERO CON PARALLAX MEJORADO   */
 /* ---------------------------- */
 .hero {
   position: relative;
@@ -27,115 +27,150 @@ body {
   display: flex;
   align-items: center;
   padding-left: 70px;
+  overflow: hidden;
 }
 
-/* Sombra + luz suave */
+/* CAPA DE ILUMINACIÓN SUPERIOR */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.4) 40%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-  backdrop-filter: blur(1px);
+  background: radial-gradient(
+      circle at 30% 50%,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0) 60%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.3),
+      rgba(0, 0, 0, 0.25)
+    );
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+/* EFECTO DE PARTÍCULAS */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.pngall.com/wp-content/uploads/15/Fire-Particles-PNG-Images.png");
+  opacity: 0.25;
+  mix-blend-mode: soft-light;
+  animation: float 10s infinite linear;
+  z-index: 1;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-80px);
+  }
 }
 
 /* ---------------------------- */
-/* Contenido del Hero           */
+/* CONTENIDO HERO               */
 /* ---------------------------- */
 .contenido {
   position: relative;
-  z-index: 2;
-  max-width: 650px;
+  z-index: 3;
+  max-width: 700px;
   color: #0d2e2e;
+  padding-right: 40px;
+  text-shadow: 0 2px 15px rgba(255, 255, 255, 0.8);
 }
 
-/* Títulos */
 .subtitulo {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   color: #ff9100;
   font-style: italic;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
 }
 
 .titulo {
-  font-size: 7rem;
+  font-size: 7.5rem;
   font-weight: 900;
   line-height: 0.9;
 }
 
-/* Ubicación */
+/* ---------------------------- */
+/* UBICACIÓN (GLASS CARD)       */
+/* ---------------------------- */
 .ubicacion {
   display: inline-flex;
   align-items: center;
   border-radius: 50px;
   overflow: hidden;
   margin-top: 40px;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.50);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
   backdrop-filter: blur(8px);
 }
 
 .estado {
   background: #0d2e2e;
   color: white;
-  padding: 12px 25px;
+  padding: 14px 30px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .ciudad {
-  padding: 12px 25px;
-  font-weight: 500;
+  padding: 14px 30px;
+  font-weight: 600;
+  color: #0d2e2e;
+  letter-spacing: 0.5px;
 }
 
 /* ---------------------------- */
-/* Animaciones                  */
+/* BOTÓN CTA                    */
 /* ---------------------------- */
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-  opacity: 0;
+.cta {
+  display: inline-block;
+  margin-top: 45px;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border-radius: 35px;
+  background: #ff9100;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
 }
 
-.slide-up {
-  animation: slideUp 1s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
+.cta:hover {
+  background: #ff7b00;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-.delay-1 {
-  animation-delay: 0.2s;
-}
-
-.delay-2 {
-  animation-delay: 0.4s;
-}
-
-.pop-in {
-  animation: popIn 0.9s ease forwards;
-  opacity: 0;
-  transform: scale(0.7);
-}
+/* ---------------------------- */
+/* ANIMACIONES                 */
+/* ---------------------------- */
+.fade-in { animation: fadeIn 1.5s ease forwards; opacity: 0; }
+.slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(40px); }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
 
 /* Keyframes */
 @keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { padding-left: 25px; }
+  .titulo { font-size: 4.5rem; }
+  .subtitulo { font-size: 2.5rem; }
+  .ubicacion { transform: scale(0.9); }
 }
