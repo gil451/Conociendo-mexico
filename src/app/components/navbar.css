@@ -1,0 +1,277 @@
+/* Paleta Usada: 
+ 	- Primario (Verde Profundo): #0A3D3C
+ 	- Secundario (Turquesa): #1ABC9C
+ 	- Acento (Blanco Roto): #F4F4F4
+*/
+
+/* --- BARRA DE NAVEGACIÓN PRINCIPAL (Glassmorphism Flotante) --- */
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 10px; /* Margen a la izquierda */
+    right: 10px; /* Margen a la derecha */
+    width: auto; /* Ancho ajustado por left/right */
+    max-width: none;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px; /* Padding ajustado */
+
+    /* Glassmorphism mejorado */
+    background: rgba(244, 244, 244, 0.75); /* Fondo blanco roto semi-transparente */
+    border-radius: 12px; /* Bordes redondeados más suaves */
+    backdrop-filter: blur(15px); /* Un blur más intenso */
+
+    /* Sombra y Borde más sutil */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde blanco sutil */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+
+    transition: all 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* --- LOGO / Marca --- */
+.navbar-logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0A3D3C; /* Verde Profundo para el contraste */
+    transition: color 0.4s ease;
+}
+
+.navbar-logo .logo-accent {
+    color: #1ABC9C; /* Turquesa */
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* --- Navbar al hacer scroll (Se pega arriba y se hace sólido) --- */
+.navbar.scrolled {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 12px 40px;
+    background: #0A3D3C; /* Sólido Verde Profundo */
+    backdrop-filter: blur(0);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .navbar-logo a {
+    color: #F4F4F4; /* Texto blanco en fondo oscuro */
+}
+
+/* --- MENÚ (Contenedor principal para enlaces y botones) --- */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+/* --- ENLACES DE NAVEGACIÓN (Home, Lugares, Cultura, etc.) --- */
+.menu > a {
+    text-decoration: none;
+    padding: 8px 12px; /* Aumentar el padding para hit area */
+    color: #0A3D3C;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    margin: 0 5px; /* Separación entre enlaces */
+}
+
+/* Adaptación del color del texto cuando el navbar es sólido */
+.navbar.scrolled .menu > a:not(.destacado):not(.btn-login):not(.btn-register) {
+    color: #F4F4F4;
+}
+
+.navbar.scrolled .menu a.activo:not(.destacado):not(.btn-login):not(.btn-register) {
+    color: #1ABC9C;
+}
+
+/* Efecto de línea inferior al pasar el mouse (Mejorado) */
+.menu > a:not(.destacado):not(.btn-login):not(.btn-register)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Inicio en el centro */
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px; /* Más visible */
+    background-color: #1ABC9C;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.menu > a:not(.destacado):not(.btn-login):not(.btn-register):hover {
+    color: #1ABC9C;
+}
+
+.menu > a:not(.destacado):not(.btn-login):not(.btn-register):hover::after,
+.menu a.activo:not(.destacado):not(.btn-login):not(.btn-register)::after {
+    width: 70%; /* Línea que no es de 100% para un look más moderno */
+}
+
+/* Estado ACTIVO */
+.menu a.activo:not(.destacado):not(.btn-login):not(.btn-register) {
+    color: #1ABC9C;
+    font-weight: 600;
+}
+
+/* --- ENLACE DESTACADO (Call to Action: Tour 360) --- */
+.destacado-btn {
+    margin-left: 20px; /* Separación clara de los enlaces */
+    padding: 8px 20px;
+    background: #1ABC9C;
+    color: #0A3D3C !important;
+    font-weight: 700;
+    border-radius: 25px; /* Más redondeado */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destacado-btn:hover {
+    background: #47efcc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+}
+
+.menu a.activo.destacado {
+    background: #47efcc;
+    color: #0A3D3C !important;
+    box-shadow: 0 0 0 2px #0A3D3C inset; /* Borde interior sutil al estar activo */
+}
+
+.menu a.destacado::after {
+    display: none;
+}
+
+/* --- GRUPO DE BOTONES DE AUTENTICACIÓN --- */
+.auth-actions {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    margin-left: 30px; /* Separación clara del resto del menú */
+}
+
+/* --- BOTÓN LOGIN (Outline) --- */
+.btn-login {
+    padding: 8px 18px;
+    border: 2px solid #0A3D3C;
+    border-radius: 25px;
+    background: transparent;
+    color: #0A3D3C;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background: rgba(10, 61, 60, 0.1);
+    transform: translateY(-1px);
+}
+
+.navbar.scrolled .btn-login {
+    border-color: #F4F4F4;
+    color: #F4F4F4;
+}
+
+.navbar.scrolled .btn-login:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-login.active {
+    background: #1ABC9C;
+    border-color: #1ABC9C;
+    color: #0A3D3C;
+}
+
+/* --- BOTÓN REGISTER (Sólido) --- */
+.btn-register {
+    padding: 8px 20px;
+    background: #1ABC9C;
+    color: #0A3D3C !important;
+    font-weight: 700;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-register:hover {
+    background: #47efcc;
+    transform: translateY(-1px);
+}
+
+.navbar.scrolled .btn-register {
+    background: #F4F4F4;
+    color: #0A3D3C !important;
+}
+
+.btn-register.active {
+    background: #47efcc;
+    color: #0A3D3C !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- Media Queries (Responsividad: Mobile First) --- */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+    /* Ocultar el botón destacado en pantallas medianas para ahorrar espacio */
+    .destacado-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    /* Ajuste de diseño en dispositivos tablet/móvil */
+    .navbar {
+        padding: 12px 20px;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-radius: 0;
+        /* Forzar estado sólido y oscuro en móvil para mejor legibilidad */
+        background: #0A3D3C; 
+        border: none;
+    }
+
+    /* Asegurar que el logo sea visible */
+    .navbar-logo a, .navbar-logo .logo-accent {
+        color: #F4F4F4;
+    }
+
+    .menu {
+        flex-grow: 1; 
+        justify-content: space-between;
+    }
+    
+    /* Ocultar botones de autenticación para ahorrar espacio en móvil */
+    .auth-actions {
+        display: none; 
+    }
+
+    /* Ajustar enlaces en modo móvil (todos claros) */
+    .menu > a {
+        color: #F4F4F4;
+    }
+    
+    .menu a.activo {
+        color: #1ABC9C;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ocultar el logo en pantallas muy pequeñas */
+     .navbar-logo {
+        display: none;
+    }
+    /* Centrar el menú de navegación */
+    .menu {
+        justify-content: center; 
+        gap: 15px;
+    }
+    
+    .menu > a {
+        padding: 8px 5px; 
+    }
+}
