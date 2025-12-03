@@ -15,7 +15,7 @@ export default function Home() {
             <span className="ciudad">SAN CRISTÓBAL DE LAS CASAS</span>
           </div>
 
-          <a href="#tour" className="cta slide-up delay-3">
+          <a href="/tour360" className="cta slide-up delay-3">
             Explorar ahora
           </a>
         </div>

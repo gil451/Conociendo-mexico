@@ -22,14 +22,33 @@ export default function Tour360() {
     }
   };
 
+  // 🔥 NUEVO: Array dinámico de videos
+  const videos = [
+    {
+      titulo: "San Cristóbal desde el aire",
+      url: "https://www.youtube.com/embed/6gU6U98hSug?si=Cr_KlTYXjUfVqprT"
+    },
+    {
+      titulo: "Lugares que no te puedes perder en Chiapas",
+      url: "https://www.youtube.com/embed/YH7ZnB-oGoM?si=BWY406QzAYXhEI6y"
+    },
+    {
+      titulo: "cosas que hacer en San Cristóbal de las Casas",
+      url:"https://www.youtube.com/embed/6xqVSuuJYbE?si=Ac6sO3EnD7YPImYP"
+    }
+  ];
+
+
   const [selected, setSelected] = useState("catedral");
 
   return (
     <div className="tour-container">
       <h1 className="tour-title">Tour Virtual 360°</h1>
-      <p className="tour-subtitle">Explora los lugares más representativos de San Cristóbal de las Casas desde tu pantalla</p>
+      <p className="tour-subtitle">
+        Explora los lugares más representativos de San Cristóbal de las Casas desde tu pantalla
+      </p>
 
-      {/* Picker */}
+      {/* Select del Tour */}
       <div className="tour-picker">
         <select
           value={selected}
@@ -43,13 +62,29 @@ export default function Tour360() {
         </select>
       </div>
 
-      {/* Iframe dinámico */}
+      {/* Iframe del Tour 360 */}
       <iframe
         className="tour-iframe"
         src={lugares[selected].url}
         allowFullScreen
         loading="lazy"
       ></iframe>
+
+      {/* --- NUEVO BLOQUE DE VIDEOS --- */}
+      <h2 className="videos-title">Videos del destino</h2>
+
+      <div className="videos-grid">
+        {videos.map((video, index) => (
+          <div key={index} className="video-card">
+            <h3>{video.titulo}</h3>
+            <iframe
+              src={video.url}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

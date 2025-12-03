@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BiUser, BiLock, BiEnvelope, BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2"; // ⬅ IMPORTANTE
 import AuthInput from "../components/AuthInput";
 import "../auth.css";
 
@@ -15,7 +16,30 @@ export default function Register() {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    console.log("Registrar:", { nombre, usuario, correo, password });
+    // Validaciones simples
+    if (!nombre || !correo || !password) {
+      return Swal.fire({
+        icon: "warning",
+        title: "Campos incompletos",
+        text: "Por favor llena todos los campos",
+        confirmButtonColor: "#222",
+      });
+    }
+
+    // Registro exitoso (simulación)
+    Swal.fire({
+      icon: "success",
+      title: "Registro exitoso",
+      text: "Tu cuenta fue creada correctamente",
+      confirmButtonColor: "#111",
+      timer: 1700,
+      showConfirmButton: false,
+    });
+
+    // Redirigir después de un momento
+    setTimeout(() => {
+      navigate("/login");
+    }, 1700);
   };
 
   return (
@@ -36,14 +60,6 @@ export default function Register() {
             icon={<BiUser />}
             value={nombre}
             setValue={setNombre}
-          />
-
-          <AuthInput
-            label="Usuario"
-            type="text"
-            icon={<BiUser />}
-            value={usuario}
-            setValue={setUsuario}
           />
 
           <AuthInput

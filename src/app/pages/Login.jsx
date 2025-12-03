@@ -1,18 +1,43 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import { BiUser, BiLock, BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";  // ⬅ IMPORTANTE
 import AuthInput from "../components/AuthInput";
 import "../auth.css";
 
 export default function Login() {
-  const [usuario, setUsuario] = useState("");
+  const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Iniciar sesión con:", usuario, password);
+
+    // Simulación rápida:
+    if (correo.trim() === "" || password.trim() === "") {
+      return Swal.fire({
+        icon: "warning",
+        title: "Campos vacíos",
+        text: "Debes ingresar un correo y contraseña",
+        confirmButtonColor: "#333",
+      });
+    }
+
+    // 🎉 Simulación de login exitoso
+    Swal.fire({
+      icon: "success",
+      title: "Inicio de sesión exitoso",
+      text: "Bienvenido a la plataforma",
+      confirmButtonColor: "#111",
+      timer: 1600,
+      showConfirmButton: false,
+    });
+
+    // Navegar después de un momento
+    setTimeout(() => {
+      navigate("/"); // Cambia a la página que quieras
+    }, 1600);
   };
 
   return (
@@ -28,11 +53,11 @@ export default function Login() {
 
         <form onSubmit={handleLogin}>
           <AuthInput
-            label="Usuario"
-            type="text"
+            label="Correo"
+            type="email"
             icon={<BiUser />}
-            value={usuario}
-            setValue={setUsuario}
+            value={correo}
+            setValue={setCorreo}
           />
 
           <AuthInput
